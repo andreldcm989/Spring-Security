@@ -8,8 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.financeiro.contabilidade.enums.Cargo;
-
 @Entity
 @Table(name = "TB_OPERADORES")
 public class Operador extends Funcionario {
@@ -30,9 +28,9 @@ public class Operador extends Funcionario {
     public Operador() {
     }
 
-    public Operador(Long id, LocalDateTime dataCadastro, Integer matricula, String nome, String sexo, Double salario,
-            Cargo cargo, UserModel usuario, int cargaHoraria, int entrada, int saida, Supervisor supervisor) {
-        super(id, dataCadastro, matricula, nome, sexo, salario, cargo, usuario);
+    public Operador(LocalDateTime dataCadastro, Integer matricula, String nome, String sexo, Double salario,
+            String cargo, int cargaHoraria, int entrada, int saida, Supervisor supervisor) {
+        super(dataCadastro, matricula, nome, sexo, salario, cargo);
         this.cargaHoraria = cargaHoraria;
         this.entrada = entrada;
         this.saida = saida;

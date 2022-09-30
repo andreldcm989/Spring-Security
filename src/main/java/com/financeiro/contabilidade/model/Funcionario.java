@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
-import com.financeiro.contabilidade.enums.Cargo;
-
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Funcionario implements Serializable {
 
@@ -23,23 +21,21 @@ public abstract class Funcionario implements Serializable {
     private Integer matricula;
     private String nome;
     private String sexo;
-    private Double Salario;
-    private Cargo cargo;
+    private Double salario;
+    private String cargo;
     private UserModel usuario;
 
     public Funcionario() {
     }
 
-    public Funcionario(Long id, LocalDateTime dataCadastro, Integer matricula, String nome, String sexo, Double salario,
-            Cargo cargo, UserModel usuario) {
-        this.id = id;
+    public Funcionario(LocalDateTime dataCadastro, Integer matricula, String nome, String sexo, Double salario,
+            String cargo) {
         this.dataCadastro = dataCadastro;
         this.matricula = matricula;
         this.nome = nome;
         this.sexo = sexo;
-        Salario = salario;
+        this.salario = salario;
         this.cargo = cargo;
-        this.usuario = usuario;
     }
 
     public Long getId() {
@@ -83,18 +79,18 @@ public abstract class Funcionario implements Serializable {
     }
 
     public Double getSalario() {
-        return Salario;
+        return salario;
     }
 
     public void setSalario(Double salario) {
-        Salario = salario;
+        this.salario = salario;
     }
 
-    public Cargo getCargo() {
+    public String getCargo() {
         return cargo;
     }
 
-    public void setCargo(Cargo cargo) {
+    public void setCargo(String cargo) {
         this.cargo = cargo;
     }
 
