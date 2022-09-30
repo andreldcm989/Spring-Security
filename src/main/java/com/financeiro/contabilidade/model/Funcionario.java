@@ -13,7 +13,7 @@ import javax.persistence.InheritanceType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Funcionario implements Serializable {
+public abstract class Funcionario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,7 +26,7 @@ public class Funcionario implements Serializable {
     private String sexo;
     private Double salario;
     private String cargo;
-    private UserModel usuario;
+    // private UserModel usuario;
 
     public Funcionario() {
     }
@@ -97,12 +97,13 @@ public class Funcionario implements Serializable {
         this.cargo = cargo;
     }
 
-    public UserModel getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(UserModel usuario) {
-        this.usuario = usuario;
-    }
-
+    /*
+     * public UserModel getUsuario() {
+     * return usuario;
+     * }
+     * 
+     * public void setUsuario(UserModel usuario) {
+     * this.usuario = usuario;
+     * }
+     */
 }

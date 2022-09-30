@@ -15,10 +15,10 @@ import javax.persistence.Table;
 public class Coordenador extends Funcionario {
 
     @Column(nullable = false)
-    public Double metaAnual;
+    private Double metaAnual;
 
     @OneToMany(mappedBy = "coordenador")
-    public List<Supervisor> supervisores;
+    private List<Supervisor> supervisores;
 
     @ManyToOne
     @JoinColumn(name = "gerente_id")
