@@ -75,4 +75,15 @@ public class Supervisor extends Funcionario {
         this.coordenador = coordenador;
     }
 
+    public List<Operador> getOperadores() {
+        return operadores;
+    }
+
+    public void addOperador(Operador operador) {
+        operadores.add(operador);
+    }
+
+    public void excluirOperador(Operador operador) {
+        operadores.remove(operador);
+    }
 }

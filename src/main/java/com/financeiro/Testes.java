@@ -1,7 +1,6 @@
 package com.financeiro;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -10,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 import com.financeiro.contabilidade.enums.Cargo;
 import com.financeiro.contabilidade.model.Operador;
 import com.financeiro.contabilidade.model.Supervisor;
-import com.financeiro.contabilidade.model.UserModel;
 import com.financeiro.repositorios.OperadorRep;
 import com.financeiro.repositorios.SupervisorRep;
 
