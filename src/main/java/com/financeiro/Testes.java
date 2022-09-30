@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import com.financeiro.contabilidade.enums.Cargo;
 import com.financeiro.contabilidade.model.Operador;
 import com.financeiro.contabilidade.model.Supervisor;
-import com.financeiro.repositorios.OperadorRep;
-import com.financeiro.repositorios.SupervisorRep;
+import com.financeiro.contabilidade.repositorios.OperadorRep;
+import com.financeiro.contabilidade.repositorios.SupervisorRep;
 
 @Configuration
 public class Testes implements CommandLineRunner {
