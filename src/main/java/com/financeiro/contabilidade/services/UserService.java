@@ -1,5 +1,7 @@
 package com.financeiro.contabilidade.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -22,6 +24,10 @@ public class UserService implements UserDetailsService {
     public User salvarUsuario(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRep.save(user);
+    }
+
+    public List<User> listarUsuarios() {
+        return userRep.findAll();
     }
 
     @Override
