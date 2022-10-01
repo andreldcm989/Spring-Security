@@ -1,4 +1,4 @@
-package com.financeiro;
+package com.financeiro.contabilidade;
 
 import java.time.LocalDateTime;
 
@@ -29,8 +29,8 @@ public class Testes implements CommandLineRunner {
         Operador o1 = new Operador(LocalDateTime.now(), 2001, "Roger Guedes", "M", 3000.0, Cargo.OPERADOR.toString(),
                 36, 8, 14, s1);
 
-        operadorRep.save(o1);
         supervisorRep.save(s1);
+        operadorRep.save(o1);
 
     }
 
