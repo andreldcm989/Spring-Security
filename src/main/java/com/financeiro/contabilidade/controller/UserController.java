@@ -1,5 +1,6 @@
 package com.financeiro.contabilidade.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.financeiro.contabilidade.model.User;
+import com.financeiro.contabilidade.model.dto.UserDtoRetorno;
+import com.financeiro.contabilidade.model.dto.UserDtoSalvar;
 import com.financeiro.contabilidade.services.UserService;
 
 @RestController
@@ -21,12 +24,23 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<User> salvarUsuario(@RequestBody User usuario) {
-        return ResponseEntity.ok().body(userService.salvarUsuario(usuario));
+    public ResponseEntity<UserDtoRetorno> salvarUsuario(@RequestBody UserDtoSalvar usuario) {
+        User novo = new User();
+        novo.setUsername(usuario.getUsername());
+        novo.setPassword(usuario.getPassword());
+        userService.salvarUsuario(novo);
+        UserDtoRetorno retorno = new UserDtoRetorno(usuario.getUsername());
+        return ResponseEntity.ok().body(retorno);
     }
 
     @GetMapping
-    public ResponseEntity<List<User>> listarUsuarios() {
-        return ResponseEntity.ok().body(userService.listarUsuarios());
+    public ResponseEntity<List<UserDtoRetorno>> listarUsuarios() {
+        List<User> usuarios = userService.listarUsuarios();
+        List<UserDtoRetorno> listaDto = new ArrayList<>();
+        usuarios.forEach(user -> {
+            UserDtoRetorno dto = new UserDtoRetorno(user.getUsername());
+            listaDto.add(dto);
+        });
+        return ResponseEntity.ok().body(listaDto);
     }
 }

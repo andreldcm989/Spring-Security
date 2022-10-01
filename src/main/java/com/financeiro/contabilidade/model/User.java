@@ -67,6 +67,14 @@ public class User implements UserDetails {
         this.username = username;
     }
 
+    public List<RoleModel> getRoles() {
+        return roles;
+    }
+
+    public void addRole(RoleModel roleModel) {
+        roles.add(roleModel);
+    }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
