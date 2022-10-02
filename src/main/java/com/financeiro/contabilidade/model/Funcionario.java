@@ -103,13 +103,12 @@ public abstract class Funcionario implements Serializable {
         this.cargo = cargo;
     }
 
-    /*
-     * public UserModel getUsuario() {
-     * return usuario;
-     * }
-     * 
-     * public void setUsuario(UserModel usuario) {
-     * this.usuario = usuario;
-     * }
-     */
+    public User getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(User usuario) {
+        this.usuario = usuario;
+    }
+
 }
