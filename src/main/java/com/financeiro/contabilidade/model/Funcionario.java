@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -26,6 +28,10 @@ public abstract class Funcionario implements Serializable {
     private String sexo;
     private Double salario;
     private String cargo;
+
+    @OneToOne
+    @JoinColumn(name = "usuario_id")
+    private User usuario;
     // private UserModel usuario;
 
     public Funcionario() {

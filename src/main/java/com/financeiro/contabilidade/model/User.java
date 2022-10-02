@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -31,6 +32,9 @@ public class User implements UserDetails {
     private String username;
     @Column(nullable = false)
     private String password;
+
+    @OneToOne(mappedBy = "usuario")
+    private Funcionario funcionario;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "tb_users_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
