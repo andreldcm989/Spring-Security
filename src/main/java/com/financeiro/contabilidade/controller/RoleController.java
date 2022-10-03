@@ -19,7 +19,7 @@ public class RoleController {
     @Autowired
     private RoleService roleService;
 
-    @PreAuthorize("ADMIN")
+    @PreAuthorize("ROLE_ADMIN")
     @GetMapping
     public ResponseEntity<List<RoleModel>> listarRoles() {
         return ResponseEntity.ok().body(roleService.listarRoles());

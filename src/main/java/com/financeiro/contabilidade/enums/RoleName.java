@@ -2,10 +2,10 @@ package com.financeiro.contabilidade.enums;
 
 public enum RoleName {
 
-    ADMIN,
-    GERENTE,
-    COORDENADOR,
-    SUPERVISOR,
-    OPERADOR;
+    ROLE_ADMIN,
+    ROLE_GERENTE,
+    ROLE_COORDENADOR,
+    ROLE_SUPERVISOR,
+    ROLE_OPERADOR;
 
 }

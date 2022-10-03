@@ -19,7 +19,7 @@ public class GerenteService {
         return gerenteRep.save(gerente);
     }
 
-    public List<Gerente> listarGerentees() {
+    public List<Gerente> listarGerentes() {
         return gerenteRep.findAll();
     }
 
