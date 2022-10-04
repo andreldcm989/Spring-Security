@@ -11,16 +11,15 @@ public class CoordenadorDto extends FuncionarioDto {
     public CoordenadorDto() {
     }
 
-    public CoordenadorDto(Integer matricula, String nome, String sexo, Double salario, String cargo, Double metaAnual,
-            List<SupervisorDto> supervisoresDto, GerenteDto gerenteDto) {
-        super(matricula, nome, sexo, salario, cargo);
-        this.metaAnual = metaAnual;
-        this.supervisoresDto = supervisoresDto;
-        this.gerenteDto = gerenteDto;
-    }
-
     public Double getMetaAnual() {
         return metaAnual;
+    }
+
+    public CoordenadorDto(Integer matricula, String nome, String sexo, Double salario, String cargo, String usuario,
+            String senha, Double metaAnual, GerenteDto gerenteDto) {
+        super(matricula, nome, sexo, salario, cargo, usuario, senha);
+        this.metaAnual = metaAnual;
+        this.gerenteDto = gerenteDto;
     }
 
     public void setMetaAnual(Double metaAnual) {

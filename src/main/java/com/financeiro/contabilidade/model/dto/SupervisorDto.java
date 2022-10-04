@@ -16,13 +16,15 @@ public class SupervisorDto extends FuncionarioDto {
     public SupervisorDto() {
     }
 
-    public SupervisorDto(Integer matricula, String nome, String sexo, Double salario,
-            String cargo, int cargaHoraria, int entrada, int saida, CoordenadorDto coordenadordDto) {
-        super(matricula, nome, sexo, salario, cargo);
+    public SupervisorDto(Integer matricula, String nome, String sexo, Double salario, String cargo, String usuario,
+            String senha, int cargaHoraria, int entrada, int saida, CoordenadorDto coordenadordDto,
+            List<Operador> operadores) {
+        super(matricula, nome, sexo, salario, cargo, usuario, senha);
         this.cargaHoraria = cargaHoraria;
         this.entrada = entrada;
         this.saida = saida;
         this.coordenadordDto = coordenadordDto;
+        this.operadores = operadores;
     }
 
     public int getCargaHoraria() {
@@ -67,5 +69,9 @@ public class SupervisorDto extends FuncionarioDto {
 
     public void excluirOperador(Operador operador) {
         operadores.remove(operador);
+    }
+
+    public CoordenadorDto getCoordenadordDto() {
+        return coordenadordDto;
     }
 }

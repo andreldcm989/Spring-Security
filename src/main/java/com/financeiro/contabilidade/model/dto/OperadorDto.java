@@ -12,17 +12,17 @@ public class OperadorDto extends FuncionarioDto {
     public OperadorDto() {
     }
 
-    public OperadorDto(Integer matricula, String nome, String sexo, Double salario, String cargo,
-            Integer cargaHoraria, Integer entrada, Integer saida, Supervisor supervisor) {
-        super(matricula, nome, sexo, salario, cargo);
+    public Integer getCargaHoraria() {
+        return cargaHoraria;
+    }
+
+    public OperadorDto(Integer matricula, String nome, String sexo, Double salario, String cargo, String usuario,
+            String senha, Integer cargaHoraria, Integer entrada, Integer saida, Supervisor supervisor) {
+        super(matricula, nome, sexo, salario, cargo, usuario, senha);
         this.cargaHoraria = cargaHoraria;
         this.entrada = entrada;
         this.saida = saida;
         this.supervisor = supervisor;
-    }
-
-    public Integer getCargaHoraria() {
-        return cargaHoraria;
     }
 
     public void setCargaHoraria(Integer cargaHoraria) {

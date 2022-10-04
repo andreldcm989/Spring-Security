@@ -1,15 +1,18 @@
 package com.financeiro.contabilidade.model.dto;
 
+import java.util.List;
+
 public class UserDtoRetorno {
 
     private String username;
-    private String role;
+    private List<String> roles;
 
     public UserDtoRetorno() {
     }
 
-    public UserDtoRetorno(String username) {
+    public UserDtoRetorno(String username, List<String> roles) {
         this.username = username;
+        this.roles = roles;
     }
 
     public String getUsername() {
@@ -20,12 +23,12 @@ public class UserDtoRetorno {
         this.username = username;
     }
 
-    public String getRole() {
-        return role;
+    public List<String> getRole() {
+        return roles;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void addRole(String role) {
+        roles.add(role);
     }
 
 }

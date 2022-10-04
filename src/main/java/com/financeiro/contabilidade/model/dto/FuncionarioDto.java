@@ -7,20 +7,25 @@ public class FuncionarioDto {
     private String sexo;
     private Double salario;
     private String cargo;
+    private String usuario;
+    private String senha;
 
     public FuncionarioDto() {
     }
 
-    public FuncionarioDto(Integer matricula, String nome, String sexo, Double salario, String cargo) {
+    public Integer getMatricula() {
+        return matricula;
+    }
+
+    public FuncionarioDto(Integer matricula, String nome, String sexo, Double salario, String cargo, String usuario,
+            String senha) {
         this.matricula = matricula;
         this.nome = nome;
         this.sexo = sexo;
         this.salario = salario;
         this.cargo = cargo;
-    }
-
-    public Integer getMatricula() {
-        return matricula;
+        this.usuario = usuario;
+        this.senha = senha;
     }
 
     public void setMatricula(Integer matricula) {
@@ -57,6 +62,22 @@ public class FuncionarioDto {
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
 }

@@ -10,4 +10,6 @@ import com.financeiro.contabilidade.model.User;
 public interface UserRep extends JpaRepository<User, UUID> {
 
     public Optional<User> findByUsername(String username);
+
+    public User getReferenceByUsername(String username);
 }
